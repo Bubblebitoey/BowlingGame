@@ -11,11 +11,11 @@ public class GameTest {
 //		new Game();
 //	}
 	
-	@Test
-		public void canRollBall() {
-			Game game = new Game();
-			game.roll(0);
-		}
+//	@Test
+//		public void canRollBall() {
+//			Game game = new Game();
+//			game.roll(0);
+//		}
 		
 	@Test
 	public void canScoreCutterGame() {
