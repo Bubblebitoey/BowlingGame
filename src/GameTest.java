@@ -20,14 +20,16 @@ public class GameTest {
 	}
 	
 	@Test
-		public void canScoreGameOfOnes() {
-			game.roll(1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1);
-			assertThat(game.score(), is(20));
-		}
-	
-	@Test
-	public void camScoreSpareFollowedByThree() {
-		game.roll(5,5, 3,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
-		assertThat(game.score(), is(16));
+	public void canScoreGameOfOnes() {
+		game.roll(1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1);
+		assertThat(game.score(), is(20));
 	}
+	@Test
+	public void canScoreStrikeFollowedByThreeThenThree() {
+		game.roll(10, 3,3, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
+		assertThat(game.score(), is(22));
+	}
+	
+	
+	  
 }
