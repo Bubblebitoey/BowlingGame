@@ -15,18 +15,19 @@ public class GameTest {
 		
 	@Test
 	public void canScoreCutterGame() {
-		roll(20,0);
+		roll(0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		assertThat(game.score(), is(0));
 	}
 	
 	@Test
 		public void canScoreGameOfOnes() {
-			roll(20,1);
+			roll(1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1, 1,1);
 			assertThat(game.score(), is(20));
 		}
 	
 	@Test
 	public void camScoreSpareFollowedByThree() {
+		roll(5,5, 3,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0, 0,0);
 		game.roll(5);
 		game.roll(5);
 		game.roll(3);
@@ -34,8 +35,8 @@ public class GameTest {
 		assertThat(game.score(), is(16));
 	}
 		
-	private void roll(int times, int pinsDown) {
-		for (int i = 0; i < times; i++) {
+	private void roll(int...rolls) {
+		for (int pinsDown : rolls) {
 			game.roll(pinsDown);
 		}
 	}
