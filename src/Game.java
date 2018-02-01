@@ -14,6 +14,7 @@ public class Game {
 			if (isSpare(cursor)) {
 				//spare
 				score += 10 + rolls[cursor + 2];
+				cursor += 2;
 			} else {
 				score+= rolls[cursor] + rolls[cursor+1];
 				cursor += 2;
