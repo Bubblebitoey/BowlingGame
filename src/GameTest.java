@@ -15,16 +15,13 @@ public class GameTest {
 		
 	@Test
 	public void canScoreCutterGame() {
-		int times = 20;
-		int pinsDown = 0;
+		roll(20,0);
 		assertThat(game.score(), is(0));
 	}
 	
 	@Test
 		public void camScoreGameOfOnes() {
-			for (int i = 0; i < 20; i++) {
-				game.roll(1);
-			}
+			roll(20,1);
 			assertThat(game.score(), is(20));
 		}
 		
