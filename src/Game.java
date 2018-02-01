@@ -17,7 +17,7 @@ public class Game {
 		int score = 0;
 		int cursor = 0;
 		for (int frame = 0; frame < 10; frame++) {
-			if(rolls[cursor] == 10){
+			if(isStrike(cursor)){
 				//strikes
 				score += 10 + rolls[cursor + 1] + rolls[cursor + 2];
 				cursor ++;
@@ -37,5 +37,8 @@ public class Game {
 		return rolls[cursor] + rolls[cursor + 1] == 10;
 	}
 	
+	public boolean isStrike(int cursor) {
+		return rolls[cursor] == 10;
+	}
 	
 }
